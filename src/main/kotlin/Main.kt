@@ -1,7 +1,8 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
+import config.Initializer
+import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.runApplication
+import java.nio.file.Paths
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+fun main(args: Array<String>) {
+    runApplication<Initializer>(*args)
 }
