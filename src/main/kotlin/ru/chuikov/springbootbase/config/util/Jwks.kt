@@ -1,4 +1,4 @@
-package config.util
+package ru.chuikov.springbootbase.config.util
 
 import java.security.KeyPair;
 import java.security.interfaces.ECPrivateKey;

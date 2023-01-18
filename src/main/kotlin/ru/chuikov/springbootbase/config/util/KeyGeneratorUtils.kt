@@ -1,4 +1,4 @@
-package config.util
+package ru.chuikov.springbootbase.config.util
 
 import java.math.BigInteger;
 import java.security.KeyPair;

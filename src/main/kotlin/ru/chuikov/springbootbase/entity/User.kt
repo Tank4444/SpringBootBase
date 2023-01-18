@@ -1,8 +1,9 @@
-package entity
+package ru.chuikov.springbootbase.entity
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import jakarta.persistence.*
 import lombok.AllArgsConstructor
+import lombok.Builder
 import lombok.NoArgsConstructor
 import org.hibernate.Hibernate
 import org.springframework.security.core.GrantedAuthority
@@ -13,6 +14,7 @@ import org.springframework.security.core.userdetails.UserDetails
 @Table
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 data class User(
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,7 +24,7 @@ data class User(
     var email:String,
     @get:JvmName("getPass")
     var password:String,
-    @ManyToMany(cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
+    @ManyToMany(cascade = [CascadeType.REFRESH], fetch = FetchType.LAZY)
     @JoinTable(
         name = "user_role",
         joinColumns = [JoinColumn(
@@ -42,7 +44,7 @@ data class User(
     private val isAccountNonExpired: Boolean,
     private val isAccountNonLocked: Boolean,
 
-):UserDetails{
+    ):UserDetails{
     override fun getAuthorities(): MutableCollection<out GrantedAuthority> {
         val result:MutableList<GrantedAuthority> = mutableListOf()
         roles.forEach{

@@ -1,4 +1,4 @@
-package entity
+package ru.chuikov.springbootbase.entity
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import jakarta.persistence.Entity

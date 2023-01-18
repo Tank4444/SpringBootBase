@@ -1,11 +1,11 @@
-package config
+package ru.chuikov.springbootbase.config
 
 import com.nimbusds.jose.jwk.JWKSet;
 import com.nimbusds.jose.jwk.RSAKey;
 import com.nimbusds.jose.jwk.source.JWKSource;
 import com.nimbusds.jose.proc.SecurityContext;
 import com.nimbusds.jose.jwk.JWKSelector
-import config.util.Jwks
+import ru.chuikov.springbootbase.config.util.Jwks
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.core.Ordered
