@@ -38,11 +38,11 @@ data class User(
     )
     @JsonIgnoreProperties("users")
     var roles:List<Role>,
-    var confirmed:Boolean,
-    private val isEnabled: Boolean,
-    private val isCredentialsNonExpired: Boolean,
-    private val isAccountNonExpired: Boolean,
-    private val isAccountNonLocked: Boolean,
+    var confirmed:Boolean = false,
+    private val isEnabled: Boolean = true,
+    private val isCredentialsNonExpired: Boolean = true,
+    private val isAccountNonExpired: Boolean = true,
+    private val isAccountNonLocked: Boolean = true,
 
     ):UserDetails{
     override fun getAuthorities(): MutableCollection<out GrantedAuthority> {

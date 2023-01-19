@@ -26,6 +26,7 @@ val springBootVersion:String by project
 val springSecJwt:String by project
 val h2Database: String by project
 val springAuthorizationServer:String by project
+val springOAuth2:String by project
 
 dependencies {
     testImplementation(kotlin("test"))
@@ -35,12 +36,13 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web:$springBootVersion")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion")
     implementation("org.springframework.boot:spring-boot-starter-security:$springBootVersion")
-    //implementation("org.springframework.security:spring-security-jwt:$springSecJwt")
+    implementation("org.springframework.security.oauth:spring-security-oauth2:$springOAuth2")
+
 
     compileOnly("org.projectlombok:lombok")
     runtimeOnly("com.h2database:h2:$h2Database")
     annotationProcessor("org.projectlombok:lombok")
-    implementation("org.springframework.security:spring-security-oauth2-authorization-server:$springAuthorizationServer")
+    //implementation("org.springframework.security:spring-security-oauth2-authorization-server:$springAuthorizationServer")
 
 
 
