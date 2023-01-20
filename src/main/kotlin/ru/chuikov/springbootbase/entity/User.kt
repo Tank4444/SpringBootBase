@@ -15,15 +15,19 @@ import org.springframework.security.core.userdetails.UserDetails
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-data class User(
+class User:UserDetails{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    var id:Int,
+    val id:Int = 0
+
     @get:JvmName("getName")
-    var username:String,
-    var email:String,
+    var username:String = ""
+
+    var email:String = ""
+
     @get:JvmName("getPass")
-    var password:String,
+    var password:String = ""
+
     @ManyToMany(cascade = [CascadeType.REFRESH], fetch = FetchType.LAZY)
     @JoinTable(
         name = "user_role",
@@ -37,20 +41,25 @@ data class User(
         )]
     )
     @JsonIgnoreProperties("users")
-    var roles:List<Role>,
-    var confirmed:Boolean = false,
-    private val isEnabled: Boolean = true,
-    private val isCredentialsNonExpired: Boolean = true,
-    private val isAccountNonExpired: Boolean = true,
-    private val isAccountNonLocked: Boolean = true,
+    var roles:List<Role> = emptyList()
 
-    ):UserDetails{
+    var confirmed:Boolean = false
+    private val isEnabled: Boolean = true
+    private val isCredentialsNonExpired: Boolean = true
+    private val isAccountNonExpired: Boolean = true
+    private val isAccountNonLocked: Boolean = true
+
+    @Transient
+    private val rolePrefix = "ROLE_"
+
     override fun getAuthorities(): MutableCollection<out GrantedAuthority> {
-        val result:MutableList<GrantedAuthority> = mutableListOf()
-        roles.forEach{
-            result.add(SimpleGrantedAuthority(it.name))
+        val list = ArrayList<GrantedAuthority>()
+
+        for (role in roles) {
+            list.add(SimpleGrantedAuthority(rolePrefix + role.name))
         }
-        return result
+
+        return list
     }
 
     override fun getPassword(): String  = password
@@ -65,20 +74,5 @@ data class User(
     override fun isCredentialsNonExpired(): Boolean = isCredentialsNonExpired
 
     override fun isEnabled(): Boolean = isEnabled
-
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (other == null || Hibernate.getClass(this) != Hibernate.getClass(other)) return false
-        other as User
-
-        return id != null && id == other.id
-    }
-
-    override fun hashCode(): Int = javaClass.hashCode()
-
-    @Override
-    override fun toString(): String {
-        return this::class.simpleName + "(id = $id , username = $username , email = $email , password = $password )"
-    }
 
 }
