@@ -1,18 +1,16 @@
 package ru.chuikov.springbootbase.entity
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
-import jakarta.persistence.Entity
-import jakarta.persistence.Id
-import jakarta.persistence.ManyToMany
-import jakarta.persistence.Table
+import jakarta.persistence.*
 
 @Entity
 @Table
 class Role(
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     var id:Int,
     var name:String,
-    @ManyToMany(mappedBy = "user")
+    @ManyToMany
     @JsonIgnoreProperties("roles")
     var users:List<User>
 )

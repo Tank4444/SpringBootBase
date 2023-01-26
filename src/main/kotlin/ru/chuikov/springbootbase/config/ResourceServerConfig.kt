@@ -12,14 +12,16 @@ class ResourceServerConfig:ResourceServerConfigurerAdapter() {
     override fun configure(resources: ResourceServerSecurityConfigurer) {
         super.configure(resources)
     }
-
     override fun configure(http: HttpSecurity) {
         http
             .csrf().disable()
             .formLogin().disable()
+            .anonymous().disable()
             .authorizeHttpRequests()
             .requestMatchers("/","/index").permitAll()
+            .requestMatchers("/test/private").authenticated()
+            .requestMatchers("/test/public").permitAll()
             .requestMatchers("/private/**").hasRole("USER")
-            .requestMatchers("/public/**").authenticated()
+            .requestMatchers("/public/**").permitAll()
     }
 }

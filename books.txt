@@ -2,3 +2,4 @@ https://proandroiddev.com/how-to-create-a-rest-api-for-your-app-with-spring-boot
 https://proandroiddev.com/how-to-create-a-rest-api-for-your-app-with-spring-boot-kotlin-gradle-part-2-security-with-32f944918fe1
 https://proandroiddev.com/how-to-create-a-rest-api-for-your-app-with-spring-boot-kotlin-gradle-part-3-adding-a-h2-7f9e6219b367
 https://www.baeldung.com/spring-deprecated-websecurityconfigureradapter
+https://spring.io/blog/2022/02/21/spring-security-without-the-websecurityconfigureradapter

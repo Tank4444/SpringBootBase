@@ -1,0 +1,138 @@
+2023-01-24 11:54:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "\000d\000a    create table [*]user (\000d\000a       id integer not null,\000d\000a        confirmed boolean not null,\000d\000a        email varchar(255),\000d\000a        is_account_non_expired boolean not null,\000d\000a        is_account_non_locked boolean not null,\000d\000a        is_credentials_non_expired boolean not null,\000d\000a        is_enabled boolean not null,\000d\000a        password varchar(255),\000d\000a        username varchar(255),\000d\000a        primary key (id)\000d\000a    )"; ожидалось "identifier"
+Syntax error in SQL statement "\000d\000a    create table [*]user (\000d\000a       id integer not null,\000d\000a        confirmed boolean not null,\000d\000a        email varchar(255),\000d\000a        is_account_non_expired boolean not null,\000d\000a        is_account_non_locked boolean not null,\000d\000a        is_credentials_non_expired boolean not null,\000d\000a        is_enabled boolean not null,\000d\000a        password varchar(255),\000d\000a        username varchar(255),\000d\000a        primary key (id)\000d\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+       id integer not null,
+        confirmed boolean not null,
+        email varchar(255),
+        is_account_non_expired boolean not null,
+        is_account_non_locked boolean not null,
+        is_credentials_non_expired boolean not null,
+        is_enabled boolean not null,
+        password varchar(255),
+        username varchar(255),
+        primary key (id)
+    ) [42001-214]
+2023-01-24 11:54:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "\000d\000a    alter table if exists role_users \000d\000a       add constraint FKipeyaf3dve9njdrl1t23ndidv \000d\000a       foreign key (users_id) \000d\000a       references [*]user"; ожидалось "identifier"
+Syntax error in SQL statement "\000d\000a    alter table if exists role_users \000d\000a       add constraint FKipeyaf3dve9njdrl1t23ndidv \000d\000a       foreign key (users_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists role_users 
+       add constraint FKipeyaf3dve9njdrl1t23ndidv 
+       foreign key (users_id) 
+       references user [42001-214]
+2023-01-24 11:54:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "\000d\000a    alter table if exists user_role \000d\000a       add constraint FKc99aae0bc6u82bv3s2lw5d17m \000d\000a       foreign key (role_id) \000d\000a       references [*]user"; ожидалось "identifier"
+Syntax error in SQL statement "\000d\000a    alter table if exists user_role \000d\000a       add constraint FKc99aae0bc6u82bv3s2lw5d17m \000d\000a       foreign key (role_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists user_role 
+       add constraint FKc99aae0bc6u82bv3s2lw5d17m 
+       foreign key (role_id) 
+       references user [42001-214]
+2023-01-24 12:02:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "\000d\000a    create table [*]user (\000d\000a       id integer not null,\000d\000a        confirmed boolean not null,\000d\000a        email varchar(255),\000d\000a        is_account_non_expired boolean not null,\000d\000a        is_account_non_locked boolean not null,\000d\000a        is_credentials_non_expired boolean not null,\000d\000a        is_enabled boolean not null,\000d\000a        password varchar(255),\000d\000a        username varchar(255),\000d\000a        primary key (id)\000d\000a    )"; ожидалось "identifier"
+Syntax error in SQL statement "\000d\000a    create table [*]user (\000d\000a       id integer not null,\000d\000a        confirmed boolean not null,\000d\000a        email varchar(255),\000d\000a        is_account_non_expired boolean not null,\000d\000a        is_account_non_locked boolean not null,\000d\000a        is_credentials_non_expired boolean not null,\000d\000a        is_enabled boolean not null,\000d\000a        password varchar(255),\000d\000a        username varchar(255),\000d\000a        primary key (id)\000d\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+       id integer not null,
+        confirmed boolean not null,
+        email varchar(255),
+        is_account_non_expired boolean not null,
+        is_account_non_locked boolean not null,
+        is_credentials_non_expired boolean not null,
+        is_enabled boolean not null,
+        password varchar(255),
+        username varchar(255),
+        primary key (id)
+    ) [42001-214]
+2023-01-24 12:02:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "\000d\000a    alter table if exists role_users \000d\000a       add constraint FKipeyaf3dve9njdrl1t23ndidv \000d\000a       foreign key (users_id) \000d\000a       references [*]user"; ожидалось "identifier"
+Syntax error in SQL statement "\000d\000a    alter table if exists role_users \000d\000a       add constraint FKipeyaf3dve9njdrl1t23ndidv \000d\000a       foreign key (users_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists role_users 
+       add constraint FKipeyaf3dve9njdrl1t23ndidv 
+       foreign key (users_id) 
+       references user [42001-214]
+2023-01-24 12:02:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "\000d\000a    alter table if exists user_role \000d\000a       add constraint FKc99aae0bc6u82bv3s2lw5d17m \000d\000a       foreign key (role_id) \000d\000a       references [*]user"; ожидалось "identifier"
+Syntax error in SQL statement "\000d\000a    alter table if exists user_role \000d\000a       add constraint FKc99aae0bc6u82bv3s2lw5d17m \000d\000a       foreign key (role_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists user_role 
+       add constraint FKc99aae0bc6u82bv3s2lw5d17m 
+       foreign key (role_id) 
+       references user [42001-214]
+2023-01-24 12:04:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "\000d\000a    drop table if exists [*]user cascade "; ожидалось "identifier"
+Syntax error in SQL statement "\000d\000a    drop table if exists [*]user cascade "; expected "identifier"; SQL statement:
+
+    drop table if exists user cascade  [42001-214]
+2023-01-24 12:04:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "\000d\000a    create table [*]user (\000d\000a       id integer not null,\000d\000a        confirmed boolean not null,\000d\000a        email varchar(255),\000d\000a        is_account_non_expired boolean not null,\000d\000a        is_account_non_locked boolean not null,\000d\000a        is_credentials_non_expired boolean not null,\000d\000a        is_enabled boolean not null,\000d\000a        password varchar(255),\000d\000a        username varchar(255),\000d\000a        primary key (id)\000d\000a    )"; ожидалось "identifier"
+Syntax error in SQL statement "\000d\000a    create table [*]user (\000d\000a       id integer not null,\000d\000a        confirmed boolean not null,\000d\000a        email varchar(255),\000d\000a        is_account_non_expired boolean not null,\000d\000a        is_account_non_locked boolean not null,\000d\000a        is_credentials_non_expired boolean not null,\000d\000a        is_enabled boolean not null,\000d\000a        password varchar(255),\000d\000a        username varchar(255),\000d\000a        primary key (id)\000d\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+       id integer not null,
+        confirmed boolean not null,
+        email varchar(255),
+        is_account_non_expired boolean not null,
+        is_account_non_locked boolean not null,
+        is_credentials_non_expired boolean not null,
+        is_enabled boolean not null,
+        password varchar(255),
+        username varchar(255),
+        primary key (id)
+    ) [42001-214]
+2023-01-24 12:04:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "\000d\000a    alter table if exists role_users \000d\000a       add constraint FKipeyaf3dve9njdrl1t23ndidv \000d\000a       foreign key (users_id) \000d\000a       references [*]user"; ожидалось "identifier"
+Syntax error in SQL statement "\000d\000a    alter table if exists role_users \000d\000a       add constraint FKipeyaf3dve9njdrl1t23ndidv \000d\000a       foreign key (users_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists role_users 
+       add constraint FKipeyaf3dve9njdrl1t23ndidv 
+       foreign key (users_id) 
+       references user [42001-214]
+2023-01-24 12:04:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "\000d\000a    alter table if exists user_role \000d\000a       add constraint FKc99aae0bc6u82bv3s2lw5d17m \000d\000a       foreign key (role_id) \000d\000a       references [*]user"; ожидалось "identifier"
+Syntax error in SQL statement "\000d\000a    alter table if exists user_role \000d\000a       add constraint FKc99aae0bc6u82bv3s2lw5d17m \000d\000a       foreign key (role_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists user_role 
+       add constraint FKc99aae0bc6u82bv3s2lw5d17m 
+       foreign key (role_id) 
+       references user [42001-214]
+2023-01-24 12:05:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "\000d\000a    drop table if exists [*]user cascade "; ожидалось "identifier"
+Syntax error in SQL statement "\000d\000a    drop table if exists [*]user cascade "; expected "identifier"; SQL statement:
+
+    drop table if exists user cascade  [42001-214]
+2023-01-24 12:05:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "\000d\000a    create table [*]user (\000d\000a       id integer not null,\000d\000a        confirmed boolean not null,\000d\000a        email varchar(255),\000d\000a        is_account_non_expired boolean not null,\000d\000a        is_account_non_locked boolean not null,\000d\000a        is_credentials_non_expired boolean not null,\000d\000a        is_enabled boolean not null,\000d\000a        password varchar(255),\000d\000a        username varchar(255),\000d\000a        primary key (id)\000d\000a    )"; ожидалось "identifier"
+Syntax error in SQL statement "\000d\000a    create table [*]user (\000d\000a       id integer not null,\000d\000a        confirmed boolean not null,\000d\000a        email varchar(255),\000d\000a        is_account_non_expired boolean not null,\000d\000a        is_account_non_locked boolean not null,\000d\000a        is_credentials_non_expired boolean not null,\000d\000a        is_enabled boolean not null,\000d\000a        password varchar(255),\000d\000a        username varchar(255),\000d\000a        primary key (id)\000d\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+       id integer not null,
+        confirmed boolean not null,
+        email varchar(255),
+        is_account_non_expired boolean not null,
+        is_account_non_locked boolean not null,
+        is_credentials_non_expired boolean not null,
+        is_enabled boolean not null,
+        password varchar(255),
+        username varchar(255),
+        primary key (id)
+    ) [42001-214]
+2023-01-24 12:05:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "\000d\000a    alter table if exists role_users \000d\000a       add constraint FKipeyaf3dve9njdrl1t23ndidv \000d\000a       foreign key (users_id) \000d\000a       references [*]user"; ожидалось "identifier"
+Syntax error in SQL statement "\000d\000a    alter table if exists role_users \000d\000a       add constraint FKipeyaf3dve9njdrl1t23ndidv \000d\000a       foreign key (users_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists role_users 
+       add constraint FKipeyaf3dve9njdrl1t23ndidv 
+       foreign key (users_id) 
+       references user [42001-214]
+2023-01-24 12:05:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "\000d\000a    alter table if exists user_role \000d\000a       add constraint FKc99aae0bc6u82bv3s2lw5d17m \000d\000a       foreign key (role_id) \000d\000a       references [*]user"; ожидалось "identifier"
+Syntax error in SQL statement "\000d\000a    alter table if exists user_role \000d\000a       add constraint FKc99aae0bc6u82bv3s2lw5d17m \000d\000a       foreign key (role_id) \000d\000a       references [*]user"; expected "identifier"; SQL statement:
+
+    alter table if exists user_role 
+       add constraint FKc99aae0bc6u82bv3s2lw5d17m 
+       foreign key (role_id) 
+       references user [42001-214]

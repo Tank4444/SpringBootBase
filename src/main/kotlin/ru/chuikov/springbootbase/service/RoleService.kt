@@ -1,5 +1,6 @@
 package ru.chuikov.springbootbase.service
 
+import jakarta.annotation.PostConstruct
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import ru.chuikov.springbootbase.entity.Role
@@ -23,5 +24,10 @@ class RoleService:BasicService<Role> {
 
     override fun add(add: Role) {
         roleRepository.saveAndFlush(add)
+    }
+
+    @PostConstruct
+    private fun onStart(){
+        //roleRepository.saveAndFlush()
     }
 }

@@ -11,14 +11,11 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority
 import org.springframework.security.core.userdetails.UserDetails
 
 @Entity
-@Table
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
+@Table(name = "account")
 class User:UserDetails{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    val id:Int = 0
+    var id:Int = 0
 
     @get:JvmName("getName")
     var username:String = ""
@@ -28,7 +25,7 @@ class User:UserDetails{
     @get:JvmName("getPass")
     var password:String = ""
 
-    @ManyToMany(cascade = [CascadeType.REFRESH], fetch = FetchType.LAZY)
+    @ManyToMany(cascade = [CascadeType.REFRESH])
     @JoinTable(
         name = "user_role",
         joinColumns = [JoinColumn(
@@ -41,7 +38,7 @@ class User:UserDetails{
         )]
     )
     @JsonIgnoreProperties("users")
-    var roles:List<Role> = emptyList()
+    var roles: MutableList<Role> = mutableListOf()
 
     var confirmed:Boolean = false
     private val isEnabled: Boolean = true
